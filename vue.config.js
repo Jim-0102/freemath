@@ -112,8 +112,6 @@ module.exports = {
       clientsClaim: true
     }
   },
-  publicPath: process.env.NODE_ENV === 'production'
-    ? '/freemath/'
-    : '/'
+  publicPath: '/'
 
 }
