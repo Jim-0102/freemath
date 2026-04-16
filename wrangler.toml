@@ -1,4 +1,5 @@
 name = "freemath"
+compatibility_date = "2026-04-16"
 
-# Cloudflare Pages build output
-pages_build_output_dir = "./dist"
+[assets]
+directory = "./dist"
