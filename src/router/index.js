@@ -32,6 +32,7 @@ import TraceBack from '@/views/TraceBack'
 import AI from '@/views/AI'
 import Climbing from '@/views/Climbing'
 import CoinsView from '@/views/CoinsView'
+import CoinExchangeView from '@/views/CoinExchangeView'
 
 const routes = [
     {
@@ -198,6 +199,11 @@ const routes = [
       path: '/coins',
       name: '硬幣排列',
       component: CoinsView
+    },
+    {
+      path: '/coin-exchange',
+      name: '兌幣練習',
+      component: CoinExchangeView
     }
 ]
 
