@@ -107,13 +107,13 @@ module.exports = {
   },
   pwa: {
     workboxOptions: {
-      exclude: [/\.gitkeep/],
+      exclude: [/.gitkeep/],
       skipWaiting: true,
       clientsClaim: true
     }
   },
   publicPath: process.env.NODE_ENV === 'production'
-    ? '/'
+    ? '/freemath/'
     : '/'
 
 }
