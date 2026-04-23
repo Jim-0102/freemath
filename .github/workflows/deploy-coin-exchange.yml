@@ -1,4 +1,4 @@
-name: Deploy 兌幣練習到 GitHub Pages
+name: Deploy 兌幣練習到 Cloudflare Pages
 
 on:
   push:
@@ -28,16 +28,10 @@ jobs:
 
       - name: Build
         run: yarn build
-        env:
-          PUBLIC_PATH: /freemath/
 
-      - name: Add SPA 404 redirect
-        run: cp dist/index.html dist/404.html
-
-      - name: Deploy to gh-pages
-        uses: peaceiris/actions-gh-pages@v4
+      - name: Deploy to Cloudflare Pages
+        uses: cloudflare/wrangler-action@v3
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./dist
-          force_orphan: true
-          commit_message: 'deploy: 自動建置兌幣練習遊戲 from feature/coin-exchange'
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          command: pages deploy dist --project-name=freemath
